@@ -51,7 +51,7 @@
 \begin{document}
 
 \title{\textit{BioJS} InterMineTable Component \\
-\small{A reusable Javascript component for displaying data from InterMine compatible web-service endpoints.}
+\small{A BioJS component for displaying data from InterMine compatible web-service endpoints.}
 }
 \author[1]{Alexis Kalderimis \thanks{alex@intermine.org}}
 \author[1]{Radek Štěpán \thanks{radek@intermine.org}}
@@ -69,7 +69,7 @@
 
 \begin{abstract}
 
-The InterMineTable BioJS component is a reusable Javascript
+The InterMineTable component is a reusable Javascript
 component as part of the BioJS project. It enables users to embed
 powerful table-based query facilities in their web-sites with
 access to genomic data-warehouses such as http://www.flymine.org,
@@ -121,7 +121,7 @@ resources. With this in mind, installation comprises of including the dependenci
 the InterMineTable component on the page (usually added in the head section
 of an html page), see Appendix~\ref{sec:deps}. Once the dependency on the InterMine 
 tables library is loaded, the InterMineTable BioJS component may be included (see 
-code sample~\ref{code:loading}).
+code listing~\ref{code:loading}).
 
 \begin{lstlisting}[caption={Loading the BioJS InterMine Table library}, label={code:loading}]
 <script src="Biojs.InterMine.Table.js"></script>
@@ -228,7 +228,7 @@ as specified by the query see Figure \ref{fig:1}, Figure \ref{fig:complex}.
 \caption{
     \label{fig:1}
     A table of data loaded from FlyMine displaying the output
-   of Code Sample ~\ref{code:simple-query}
+   of Code Listing ~\ref{code:simple-query}
 }
 \end{figure}
 
@@ -237,8 +237,8 @@ as specified by the query see Figure \ref{fig:1}, Figure \ref{fig:complex}.
 \includegraphics[width=0.4\textwidth]{imtable-complex.png}
 \caption{
     \label{fig:complex}
-    A table of data loaded from FlyMine displaying the output of Code Sample
-    ~\ref{code:complex}.
+    A table of data loaded from FlyMine displaying the output of Code Listing
+    ~\ref{code:complex-query}.
 }
 \end{figure}
 
@@ -248,14 +248,15 @@ The table, as well as providing a number of common dynamic features such as
 resorting, pagination and column rearrangement, also permits much deeper
 interaction than other comparable table libraries. The table allows the
 underlying query to be changed: the contraints of the underlying query can be
-edited (Figure ~\ref{fig:edit-filters}); columns (including ones referring to data types
-not in the original query) can be added; existing columns can be removed;
-changes made can be undone; the data can be exported in a number of formats or
-sent to another application, such as a local Galaxy~\cite{galaxy} instance,
-or to a remote application such as GenomeSpace~\cite{genomespace} (Figure
-~\ref{fig:export}); the results can be saved as a resusable set (a \emph{list})
-within the originating service; individual items can also be previewed
-(Figure~\ref{fig:preview}).
+edited (Figure ~\ref{fig:edit-filters}); columns (including ones referring to
+data types not in the original query) can be added; existing columns can be
+removed; changes made can be undone; the data can be exported in a number of
+formats or sent to another application, such as a local Galaxy
+~\cite{goecks2010galaxy} ~\cite{blankenberg2010galaxy}
+~\cite{giardine2005galaxy} instance, or to a remote application such as
+GenomeSpace~\cite{genomespace} (Figure ~\ref{fig:export}); the results can be
+saved as a resusable set (a \emph{list}) within the originating service;
+individual items can also be previewed (Figure~\ref{fig:preview}).
 
 \begin{figure}[htb]
 \centering
