@@ -31,7 +31,8 @@
   morestring=[b]"
 }
 
-\lstset{frame=tb,
+\lstset{
+  frame=none,
   language=JavaScript,
   aboveskip=3mm,
   belowskip=3mm,
@@ -50,7 +51,7 @@
 
 \begin{document}
 
-\title{\textit{BioJS} InterMineTable Component:
+\title{\textit{BioJS} InterMineTable component:
 A BioJS component for displaying data from InterMine compatible web-service endpoints.
 }
 
@@ -73,7 +74,7 @@ A BioJS component for displaying data from InterMine compatible web-service endp
 \textbf{Summary:}
 The InterMineTable component is a reusable JavaScript
 component as part of the BioJS project. It enables users to embed
-powerful table-based query facilities in their web-sites with
+powerful table-based query facilities in their websites with
 access to genomic data-warehouses such as http://www.flymine.org,
 which allow users to perform flexible queries over a wide range
 of integrated data types.
@@ -110,7 +111,7 @@ data types. InterMine's particular data integration strategy puts minimal
 limitations on the kinds of queries that can be performed: any arbitrary number
 of data-sets can be referred to in the same query (provided links exist between
 them) and a wide variety of logical contraints can be added. The InterMine
-platform thus provides a basis for very flexible, user defined
+platform thus provides a basis for very flexible, user-defined
 queries over linked data sets. 
 
 The BioJS ~\cite{biojs} project seeks to provide a suite of reusable JavaScript
@@ -118,7 +119,7 @@ components that members of the bioinformatics community will find useful for
 producing analysis and visualisation tools. The InterMineTable BioJS component
 contributes towards this aim by adding a data query and exploration tool to the
 set of BioJS components which exposes the full flexibility and power of user
-defined queries over integrated linked data in a clear user-interface.
+defined queries over integrated linked data in a clear user interface.
 
 \subsection*{Installation}
 
@@ -127,7 +128,7 @@ provide extended functionality to web-based resources for life-scientists. It is
 expected to be deployed within modern browser environments with access to
 third-party resources. With this in mind, installation comprises of including
 the dependencies for the InterMine table component on the page (usually added in
-the head section of an HTML page), see Appendix~\ref{sec:deps}. Once the
+the head section of an HTML page), see Supplementary materials~\ref{sec:deps}. Once the
 dependency on the InterMine tables library is loaded, the InterMineTable BioJS
 component may be included (see code listing~\ref{code:loading}).
 
@@ -161,7 +162,7 @@ var url = "http://www.flymine.org/query";
 
 The query can be broadly defined as a list of fields, identified by paths from a
 root, constrained by a (possibly empty) set of filters. There are some
-refinements to this (such as sort-order, optional element definiton, and
+refinements to this (such as sort-order, optional element definition, and
 constraint composition) for which more detailed documentation~\cite{site:pqdocs}
 exists. The concept of a path is important to the idea of a graph of linked
 data, as it enables chains of relationships between entities to be followed,
@@ -188,9 +189,9 @@ var query = {
 or arbitrarily complex, such as the following query which combines information
 from multiple data sources (OMIM~\cite{omim}, PANTHER~\cite{panther},
 Treefam~\cite{treefam}, KEGG~\cite{kegg}, Reactome~\cite{reactome},
-FlyBase~\cite{flybase}) and across different organisms to find the \textit{D.
-Melanogaster}  genes in the pathways of genes which are orthologous to human
-genes implicated in Alzheimer's disease:
+FlyBase~\cite{flybase}) and across different organisms to find the
+\textit{Drosophila melanogaster} genes in the pathways of genes which are
+orthologous to human genes implicated in Alzheimer's disease:
 
 \begin{lstlisting}[
     caption={A Complex Query, see Figure ~\ref{fig:complex}},
@@ -256,7 +257,7 @@ as specified by the query (see Figure \ref{fig:1}, Figure \ref{fig:complex}).
 The table, as well as providing a number of common dynamic features such as
 resorting, pagination and column rearrangement, also permits much deeper
 interaction than other comparable table libraries. The table allows the
-underlying query to be changed: the contraints of the underlying query can be
+underlying query to be changed: the constraints of the underlying query can be
 edited (Figure ~\ref{fig:edit-filters}); columns (including ones referring to
 data types not in the original query) can be added; existing columns can be
 removed; changes made can be undone; the data can be exported in a number of
@@ -288,7 +289,7 @@ individual items can also be previewed (Figure~\ref{fig:preview}).
 One particularly useful feature is the ability to view the contents of a
 single column, analysing it on aggregate and adding or editing filters. This
 facility is able to present summary charts for columns based on data type:
-binned histograms for numeric data (Figure~\ref{fig:column-summary}), and
+binned histograms for numerical data (Figure~\ref{fig:column-summary}), and
 column charts for categorical data (Figure~\ref{fig:cat-column-summary},
 showing the user adding a filter by selecting items from the column).
 
@@ -335,7 +336,7 @@ application, but can be fully integrated with other components. For example,
 instead of just notifying the user by using \emph{alert}, the information about
 this object could be displayed in another component. If the user clicked on a
 protein, this could be detected, and other suitable components could be
-instantiated to display protein specific analysis (see code
+instantiated to display protein-specific analysis (see code
 sample~\ref{code:integration}).
 
 \begin{lstlisting}[caption={Integrating with Other Components - Example 1}, label={code:integration}]
@@ -368,8 +369,8 @@ displayer.addListener("domains:selected", function (domains) {
 });
 \end{lstlisting}
 
-In this way the interoperability of these components makes them of increasing
-utility to developers, the more of them are published and integrated into third
+In this way, the interoperability of these components makes them of increasing
+utility to developers, as more of them are published and integrated into third
 party applications.
 
 \section*{Discussion}
@@ -379,55 +380,47 @@ While there are some other libraries that aim to make creating dynamic tables
 easy to develop (such as DataTables~\cite{site:datatables}), there are none that
 tightly integrate facilities such as query constraint editing, column summary
 analysis, data export, support for genomic data types, and list management
-without a great deal of development effort. The access to flexible and powerful
+without a great deal of development effort. Access to flexible and powerful
 data-warehousing tools on the InterMine platform makes these table components
-uniquely powerful in the life-sciences sphere. Services that implement the
+uniquely powerful in the life sciences sphere. Services that implement the
 InterMine public API are also able to make use of the features of these tables.
 The extremely high quality data sets curated by the principal Model Organism
-databases, which the the InterMOD projects members make available, makes this
-tool unique in its immediate access to integrated life-sciences data. 
+databases, which the the InterMOD project members make available, makes this
+tool unique in its immediate access to integrated life sciences data. 
 
 \section*{Conclusions}
 
 It is hoped that this component will prove useful to those developing tools for
-researchers in the life-sciences. Various publically funded groups, such as the
-MODs and other data producing consortia, have put significant effort into
+researchers in the life sciences. Various publically funded groups, such as the
+MODs and other data-producing consortia, have put significant effort into
 creating, curating and composing high quality data sets. InterMine is an
 effective platform to add value to this work by integrating the data and
 exposing a flexible query API and user interface. The recent work in exposing
 these resources through web-services and producing reusable web-based components
 allows this investment to benefit not just visitors to the sites of InterMine
-applications, but any developer or user who aims to include complex query tools
+applications, but any developer or user who wants to include complex query tools
 as part of their platform. With access to a broad range of data sources meeting
-the needs of several diverse research communitites, we expect that a great deal
+the needs of several diverse research communities, we expect that a great deal
 of duplicated effort can be avoided, saving significant amounts of time and
 money.
 
 \subsection*{Author contributions}
 Alex Kalderimis wrote the manuscript and implemented the component, under the
 supervision of Gos Micklem, to a set of user specifications supplied by Julie
-Sullivan, with feedback given by Rachel Lyne, Radek Štěpán and Mike Lyne.
+Sullivan. Rachel Lyne, Radek Štěpán and Mike Lyne contributed to the
+component design and revised the manuscript. All authors have approved the
+manuscript.
 
 \subsection*{Acknowledgements}
-The author thanks Manuel Corpas for useful feedback.
+The authors thank Manuel Corpas for useful feedback.
 
 \subsection*{Competing interests}
-The authors declare that there are no competing interests.
+No competing interests were disclosed.
 
 \subsection*{Grant information}
 InterMine has been developed with the support of the following grants, awarded
-to Dr. G. Micklem.
-
-\begin{enumerate}
-\item the Wellcome Trust
- \begin{itemize}
- \item{Grant number: 090297}
- \end{itemize}
-\item and the National Human Genome Research Institute.
- \begin{itemize}
- \item{Grant number: R01HG004834}
- \end{itemize}
-\end{enumerate}
+to Dr. G. Micklem: the Wellcome Trust (Grant number: 090297),
+and the National Human Genome Research Institute (Grant number: R01HG004834).
 
 The content is solely the responsibility of the authors and does not necessarily
 represent the official views of the funding bodies.
@@ -436,7 +429,7 @@ represent the official views of the funding bodies.
 {\small\bibliographystyle{unsrt}
 \bibliography{references}}
 
-\section*{Appendix}
+\section*{Supplementary materials}
 \appendix
 \section{Dependencies} \label{sec:deps}
 
